@@ -1,0 +1,153 @@
+what is python?
+what is interpreter?
+what is function?
+what is class and object?
+what is constructor?
+what is self?
+what is datatype?
+what is the difference between module, Package and library?
+Module: 
+	The module is a simple Python file that contains collections of functions and global variables and with having a .py extension file. It is an executable file and to organize all the modules we have the concept called Package in Python.
+
+Package: 
+	The package is a simple directory having collections of modules. This directory contains Python modules and also having __init__.py file by which the interpreter interprets it as a Package. The package is simply a namespace. The package also contains sub-packages inside it.
+	
+Library: 
+	The library is having a collection of related functionality of codes that allows you to perform many tasks without writing your code. It is a reusable chunk of code that we can use by importing it in our program, we can just use it by importing that library and calling the method of that library with period(.).
+	
+tell me name of labraries in python?
+what is bytecode?
+what is MVT?
+how to define template in django?
+about project?
+What is django ??
+what is django architecture ?
+wap find prime number between 1 to 10
+what is ORM?
+what is list and dictionary comprehension with example?
+what is difference between list,tuple dictionary,set,frozenset ?
+
+What is dictionary?
+what is the difference between set, list and tuple ?
+What is CSRF ??
+What is post and get in django ?
+what is inheritance ? explain with examples ?
+
+pattern
+	
+		*			1		1			1
+	   ***			12		2 3			22
+	  *****			123		4 5 6		333
+	 *******		1234	7 8 9 10	4444
+	 
+input
+a = [10, 5, 7, 4, 3, 11, 10]
+
+output: [10, 'five', 7 , 'Four', ]
+	
+
+a = (1,2,3,4)
+add 50 in a
+
+What is break and pass ?
+
+input :
+a = [1,3,5,9,8,7,11]
+
+output:
+	[1,2,5] using break statement
+	
+---------------------------------------------------------	
+	
+# Recent Interview Questions for Fresher 
+Theory Questions :-
+
+1. What is Python ?
+2. What is Dynamic Programming Language ??
+3. What is Interpreter ??
+4. What is Variable ??
+5. What is keywords ??
+6. How many datatypes present in Python ??
+7. What is comparison operator ??
+8. What is List ?
+9. what is tuple ??
+10. what is dict ??
+11. What is Iterative statement ? How many ??
+12. What is Function ?
+13. How to define function ?
+14. How to call function ?
+15. What is OOP ?
+16. What is class and Objects ?
+17. What is Constructor ?
+18. What is Django ?
+19. What is Django Architecture ?
+20. What is MVT ?
+21. What is HTML ?
+22. What is CSS ?
+23. What is file Handling ?
+24. What is Exception Handling ?
+
+Logical Questions :
+1. Print prime numbers in between 1780 to 1840 
+
+2. l = ['a', 'ab', 'abc']
+   t = (10, 100, 1000)
+   d = {'a' : 10, 'ab':100, 'abc' : 1000}
+   without zip function.
+   
+3. 
+		 *******
+		  *****
+		  ****
+		  ***
+		  **
+		   *
+		   
+		   
+4. [1,2,[3,4],5,6,(7,8)]
+third sum of all elements in list
+
+
+5. l = [100, 2, 800 , 6, 1000, 2]
+	2 = two , 6=six
+	
+	l = [100, 'two', 800 , 'six', 1000, 'two']
+
+
+
+def pattern():
+		logic
+			
+			
+			
+pattern()
+
+--------------------------------------------------
+1.Tell me about yourself
+2.How many team member
+2.which type of project you have worked
+4.Difference btween List and tupple.
+5.Reverese list...explain with for loop and index
+6.Can we use list and tupple as key in dictionary.
+7.what ia celery
+8.what is broker
+9. difference between HTTPs and HTTP.
+10. what is redditdb.
+11.what is pull amd merge in git.
+12. Do you know docker.
+13. what is session.
+14. what is csrf .
+15.what is serializers.
+16.Types of decorator.
+17.Can we right our won decorator.
+18.What ia ORM.
+19.Can we create database table and use that without model class.
+20. How to dipslay table in sql.
+21. how to fetch data in table where epmployee id is 100.
+22. How to view 2 colmns from table.
+23. How to get sum of salary of all employee.
+
+
+
+
+

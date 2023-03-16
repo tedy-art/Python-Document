@@ -1,0 +1,2632 @@
+Q1:-
+interview questions
+logical questions
+
+Q.1 what is python ? Define python..
+--->    Python is a programming language created by "Guido Van Rossum" in 1991.It is a simple,general-
+    purpose,dynamically-typed,high-level,object-oriented programming language.It is an interpreted language
+   which supports multiple paradigms.i.e functional approach,procedural approach,modular approach,
+   object-oriented approach.
+   Elaborate these points:-
+   1) general-purpose:- Because it can be used in many domains.ex.ML,AI,DS,DA,webdev etc
+   2) dynamically-typed:- Python interpretes datatypes at runtime.
+   3) object-oriented :- python supports object and classes.Everything in python is considered as an
+                         object.
+   4) interpreted:- interpreted is used for final program execution.
+   Python is free and open-source programming language.python is platform independent.
+
+Q.2:- state differences between list and tuple?:-
+----> 1) list is a comma separated values within square brackets and square bracket is mandatory
+         whereas,tuple is a comma separated values withing paranthesis and paranthesis isn't mandatory.
+
+      2) list is mutable while tuple is immutable
+      3) tuple object takes  less memory than list objects.
+        import sys
+        l=[10,20,30,40]
+        t=(10,20,30,40)
+        print("list size is:",sys.getsizeof(l))
+        print("tuple size is:",sys.getsizeof(t))
+      4) list is slow in execution speed while tuple is faster in execution speed.
+      5) list is a less effcient in memory utilization while tuple is efficient.
+
+       
+l=[10,20,30,40]
+l1=[10,20,30,40]
+print(id(l))
+print(id(l1))
+
+t1=(10,20,30,40)
+t2=(10,20,30,40)
+print(id(t1))
+print(id(t2))
+
+     6) comprehension concept is applicable for list. comprehension concept is not applicable for tuple
+     7) unpacking is possible in list but list does not support packing.
+       #unpacking
+l=[10,20,30,40]
+a,b,c,d=l
+print(a,b,c,d)
+#packing
+a,b,c,d=10,20,30,40
+l=a,b,c,d
+         tuple supports both packing and unpacking.
+        #unpacking
+t=(10,20,30,40)
+a,b,c,d=t
+print(a,b,c,d)
+
+#packing
+a,b,c,d=10,20,30,40
+t=a,b,c,d
+print(t)
+   8) if the content is fixed and you need high performance,go for a tuple.
+      if the content is not fixed,go for a list.
+
+logical question:-
+q1. write a program for checking a number is armstrong or not?
+    what is armstrong number:-numbers of n digits which are equal to sum of nth power of its digits.
+    algo:-
+     1) find the number of digits in a given number.
+     2) find the unit number. numb%10
+     3) floor division by 10.
+     4) find the unit number,numb%10
+     5) find power of n of each number and then add.
+#write a program for printing armstrong number between 1 to 1000
+for i in range(1,1001):
+    num=i
+    sum1=0
+    n=len(str(i))
+    while(num!=0):
+        digit=num%10
+        sum1=sum1+digit**n
+        num=num//10
+    if i==sum1:
+        print(i)
+
+#write a program for checking a number is armstrong or not
+num=int(input("enter a number:"))
+sum1=0
+i=num
+n=len(str(i))
+while(num!=0):
+    digit=num%10
+    sum1=sum1+digit**n
+    num=num//10
+if i==sum1:
+    print("it is armstrong number")
+else:
+    print("not an armstrong number")
+
+    
+'''
+1
+12
+123
+1234
+12345'''
+n=int(input("Enter number of rows:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print(j,end="")
+    print()
+    
+
+
+
+
+1
+22
+333
+4444
+55555
+        
+    
+1) why python is general purpose programming language?
+2) why python is dynamically typed language?
+3) why do you think python is versatile than c++,java...
+4) why python is so popular?
+
+Q.What is difference between 'is' operator and '==' operator in python?
+--> 'is' operator is used to compare memory references/memory address of two objects.
+       It checks memory refrences of objects  i.e id(a)==id(b)
+    '==' is equal operator is used for comparing two objects whether they are equal or not.
+       It checks the content of objects
+
+     Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> a=10
+>>> b=10
+>>> a is b
+True
+>>> a==b
+True
+>>> b=20
+>>> a is b
+False
+>>> a==b
+False
+>>> a=10
+>>> b=10.0
+>>> a is b
+False
+>>> a==b
+True
+>>> 
+
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> l1=[10,20,30,40]
+>>> l2=[10,20,30,40]
+>>> l1 is l2
+False
+>>> l1==l2
+True
+>>> id(l1)
+2074419497024
+>>> id(l2)
+2074447044736
+>>> l3=l2
+>>> l2 is l3
+True
+>>> l2==l3
+True
+>>> l1[0] is l2[0]
+True
+>>> 
+
+Q. How will you create a constant in python? pi=3.14
+--> There is no concept of constant in python as it exists in c++,c,java.
+    We can't create constants in python
+    We can only take the feel of constant by writing the variable name in capital letters.
+    ex. PI=3.14
+
+
+Q.Python is compiled or interpreted?
+  Is python an interpreted language?
+  What is PVM?
+  How python works?
+  is python compiled language?
+ --> Python is neither true compiled nor true interpreted.Python uses both compiler and interpreter
+     for the entire code execution. First python program is given to compiler..........
+.............................
+...................
+   We can say,python is compiled-interpreted language.
+
+Q. what is bytecode?
+Q.why we need both compiler and interpreter?
+Q.What is PVM?
+
+
+Write a program for fibonacci series:-
+ what is fibonacci series:-
+prog1:-
+n=int(input("Enter how many numbers you want in your fibonacci series"))
+first=0
+second=1
+for i in range(n):
+    print(first,end=" ")
+    temp=first
+    first=second
+    second=temp+first
+
+Q. Write a python program for calculationg factorial?:-
+3 ways:-
+1) using math module
+2) by using for loop
+3) by using recursion
+
+way1:-
+import math
+print(math.factorial(5))
+
+way2:-
+using for loop
+
+n=int(input("Enter number:"))
+result=1
+for i in range(n,0,-1):
+    result=result*i
+print("factorial of",n,"is:",result)
+
+way3:-
+#way3:-
+n=int(input("Enter number:"))
+def func(n):
+    if n==1:
+        return 1
+    else:
+        return n*func(n-1)
+print(func(5))
+
+
+
+Q.Write a python program for checking number is perfect or not...
+num=int(input("Enter the number:"))
+sum1=0
+for i in range(1,num):
+    if (num%i)==0:
+        sum1=sum1+i
+if sum1==num:
+    print(num,"is a perfect number")
+else:
+    print(num,"is not a perfect number") 
+
+Q.
+1
+1 * 3
+1 * 3 4
+1 * 3 4 5'''
+#n=int(input("Enter number of rows:"))
+row=5
+for i in range(2,row+1):
+    for j in range(1,i):
+        if j==2:
+            print("*",end=' ')
+        else:
+            print(j,end=' ')
+    print()
+Q.
+'''
+p
+p y
+p y t
+p y t h 
+p y t h o
+p y t h o n'''
+
+str1=input("Enter string:")
+length=len(str1)
+for i in range(length):
+    for j in range(i+1):
+        print(str1[j],end=" ")
+    print()
+
+
+Q.write a program for swapping numbers/variable content.
+  way1:-
+  #way1
+a=10
+b=20
+print("Before swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+a,b=b,a
+print("After swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+
+
+#way2
+a=10
+b=20
+print("Before swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+temp=a
+a=b
+b=temp
+print("After swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+
+
+#way3
+a=10
+b=20
+print("Before swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+a=a+b
+b=a-b
+a=a-b 
+print("After swapping:")
+print("value of a is:",a)
+print("value of b is:",b)
+
+
+Q. How to assign multiple values to multiple variables in one line?
+a,b,c=10,20,30
+
+Q. what are various datatypes in python?:-
+--> Inbuilt datatypes are classified into two ways;-
+1) primitive datatypes:- int,float,complex,bool,None
+2) collective datatypes:- str,list,tuple,dictionary,set,frozenset,bytes,bytearray,range
+
+Q. mutable:- list,dictionary,set,bytearray
+   immutable:- str,tuple,frozenset,bytes,range,int,float,complex,bool
+
+Q. what is mutability and immutability?
+
+Q.How is memory managed in python?:-
+--> - writing efficient code means using the memory very efficiently.
+    - memory allocation:- allocating block of computer memory for our program.
+    - memory deallocation:- freeing the memory of objects.
+      C :- malloc,calloc,free...
+      C++:- new
+     In python,memory management is totally automatic as python developers created a program
+     called as "garbage collector" for memory management.
+     python memory manager:- allocating the memory
+     python garbage collector:- deallocating the memory.
+
+    Garbage collection:- It is a process in which memory is freed when not in use.
+     when garbage collector program is called:- when an object does not have any reference.Then,python
+          garbage collector frees the memory.
+     
+    - Python also keeps referece counting.
+      >>> a=10
+      >>> b=10
+      >>> id(a)
+          2107388619344
+      >>> id(b)
+          2107388619344
+      >>> c=b
+      >>> id(c)
+          2107388619344
+      >>> a=20
+      >>> id(a)
+          2107388619664
+      >>> b=30
+      >>> c=50
+
+   memory allocation:- python memory manager
+   There are two types of memory:-
+   1) stack memory  :- allocated at compile time/compiler
+   2) heap private memory   :- at runtime/execution time/interpreter
+   -stack memory contains references for the objects.
+   -heap private memory is not directly accessible.
+      
+Q.Write a python program to reverse a string:-
+  3 ways:-
+  1) using slicing
+  2) using for loop
+  3) using while loop
+using while loop:-
+'''ex
+name="kiran"
+r_name= "narik"'''
+#step1:- create empty string which will hold a reversed string.
+name=input("Enter string:")
+print("original string is:",name)
+r_name=""
+count=len(name)-1
+while count>=0:
+    r_name=r_name+name[count]
+    count-=1
+print("reversed string is:",r_name)
+
+using for loop:-
+'''ex
+name="kiran"
+r_name= "narik"'''
+#step1:- create empty string which will hold a reversed string.
+name=input("Enter string:")
+print("original string is:",name)
+r_name=""
+for char in name:
+    r_name=char+r_name
+print("reversed string is:",r_name)
+
+using slicing:-
+#way3:-
+#using slicing
+name=input("Enter string:")
+print("original string is:",name)
+print("reversed string is:",name[::-1])
+
+
+Q. write a python program to reverse internal content of each word.
+ex. java by kiran
+    avaj yb narik
+
+#java by kiran
+string=input("Enter string:")
+l=string.split()
+l1=[]
+for word in l:
+    l1.append(word[::-1])
+r_string=' '.join(l1)
+print(r_string)
+
+
+Q. write a python program for checking if string is palindrome or not...
+ 1) take user input
+ 2) we will reverse that string
+ 3) compare original string and revrsed string
+
+
+prog1
+string=input("Enter string:")
+rev_string=string[::-1]
+if string==rev_string:
+    print("string is palindrome")
+else:
+    print("string is not palindrome")
+
+prog2
+s=input("Enter string:")
+if s == s[::-1]:
+    print("Yes")
+else:
+    print("No")
+
+prog3:-
+s =input ('enter a string :')
+r=''
+l=len(s)-1
+for i in s :
+    r=i+r
+if r==s:
+    print('it is palandrome')
+else:
+    print('it is not palandrome')
+
+
+
+Q. Can we run python3 code using python2 interpreter?
+--> two major versions:- python2(2000),python3(2008)
+   
+   1) printing:-
+       python2:- print is a statement
+                 print "hello world"
+       python3:- print is a function
+                 print("hello world")
+   2) input() :- python2:- raw_input() & input()
+                 python3:- input()
+   3) '/':- python3:- returns float value for devision.
+            python2:- returns int value for devision
+   4) way of storing chars:-
+           python3:- unicode
+           python2:- ascii values
+   5) range():- python2:- xrange(),range()
+                python3:- range()
+
+Q.:-write a python program for printing following pattern:- 
+1 2 3 4 5
+1 2 3 4
+1 2 3
+1 2 
+1
+
+'''ex1:-
+n=5
+for i in range(n):
+    for j in range(1,n+1-i):
+        print(j,end=" ")
+    print()
+
+ex2:-'''
+n=int(input("Enter number:"))
+for i in range(n,0,-1):
+    for j in range(1,i+1):
+        print(j,end=" ")
+    print()
+'''
+5 5 5 5 5
+4 4 4 4
+3 3 3
+2 2
+1'''
+
+n=int(input("Enter number:"))
+for i in range(n,0,-1):
+    for j in range(1,i+1):
+        print(i,end=" ")
+    print()
+
+Q. what is list comprehension?why to use it?:-
+---> comprehension:- way of writing compact codes.
+     list comprehension:- It is a creation of a new list from an iterable that satisfy a given condtion.
+                          It is also a way of writing compact codes.
+
+
+   '''syntax:-
+new_list=[expression for item in sequence if statements]
+- if statements are optional
+- it appends expression value to the new_list'''
+#ex1
+#without using list comprehension
+l1=[1,2,3,4,5]
+new_list=[]
+for ele in l1:
+    new_list.append(ele+2)
+
+print(new_list)
+
+#using list comprehension
+print([ele+2 for ele in l1])
+
+Q. write a python program for printing first n even numbers using
+list comprehension/one line of code...
+--->
+n=int(input("enter how many even number you want:"))
+even_list=[]
+for i in range(2,n*2+1):
+    if i%2==0:
+        even_list.append(i)
+print(even_list)
+
+
+
+print([i for i in range(2,n*2+1) if i%2==0])
+
+        
+
+n=int(input("enter how many even number you want:"))
+even_list=[]
+for i in range(n):
+    if i%2==0:
+        if i%3==0:
+            even_list.append(i)
+print(even_list)
+
+print([i for i in range(n) if i%2==0 if i%3==0])
+
+        
+
+n=int(input("enter how many even number you want:"))
+even_list=[]
+for i in range(n):
+    if i%2==0:
+        even_list.append(i)
+    else:
+        even_list.append('invalid')
+print(even_list)
+
+print([i if i%2==0 else "invalid" for i in range(n)])
+
+
+#@write a python program to print every index of duplicate elements in list.
+l=[1,2,3,4,3,3,5]
+
+#index=[2,4,5]
+new_list=[]
+for i in len(l):
+    if l[i]==3:
+        new_list.append(i)
+print(new_list)
+
+Q. can you write else with for/while loop?
+---> yes..we can write else with for/while loop.
+     for i in range(10):
+         print(i)
+         if i==5:
+            break
+     else:
+         print("done")
+
+
+for i in range(10):
+    print(i)
+    if i==4:
+        break
+else:
+    print("done")
+
+
+#break(yes):- else part is not executed
+#break(no):- else part is executed
+
+
+
+Q. Write a python program for checking wether a number is prime or not?
+--->
+prog1:-
+x=int(input("Enter number"))
+if x>1:
+    for i in range(2,x):
+       if x%i==0:
+           print("It is not")
+           break
+       else:
+           print("It is prime number")
+           break
+else:
+    print("cannot be negative")
+
+prog2:-
+num=int(input("Enter number"))
+if num>1:
+    for i in range(2,num):
+        if num%i==0:
+            print("Not prime number")
+            break
+    else:
+        print("prime numeber")
+
+        
+Q. write a python program to create a dictionary for frequency of each word in a string.
+   i learn python as python is popular 
+   d={'i':1,'learn':1,'as':1,'python':2.....}
+shantanu
+d={'s':1,'h':1....}
+---->create empty dictionary
+     iterate on every element
+     check if element exist:- True  increment
+     count=0
+     add....
+freq={}
+#name=input("enter name:")
+string=input("enter string:")
+name=string.split()
+for word in name:
+    if word in freq:
+        freq[word]+=1
+    else:
+        freq[word]=1
+print(freq)
+
+
+
+Q. what is ternary operator/conditional operator in python?
+a+b:- binary
+~  :- unary
+condition:statement?statement
+
+syntax:-True if expression else False
+This evaluates something based on condition being true or false.
+ex.
+a,b=10,20
+min=a if a<b else b
+print(min)
+
+Q.
+what is usage of help() and dir() function?
+---> help():- It is used to take help related to modules,keywords and attributes etc.If no 
+             argument specified,it starts an interactive console for help...
+     dir():- It displays all the members and attributes of an object.
+
+
+Q. What is PEP8?:-
+---> PEP8 stands for 'Python Enhancement Proposal'.It is a set of rules and guidelines
+     that specifies how to format python program for maximum readability.
+     ex.
+     class name
+     class Student
+
+Q. What are python modules?name some commonly used built-in modules in python?
+---> Python modules are files containing python code.This code includes functions,variables,python
+     statements,classes etc. A python module is a file having .py extension.
+     Built-in modules are:-
+     1) math
+     2) os
+     3) sys
+     4) random
+     5) abc
+     6) requests
+     7) json
+     8) pickle etc...
+
+Q. what is indexing and slicing?:-
+----> indexing:- Indexing is a technique used for accessing an individual element of a sequence.
+      #sequence:- list,tuple,string.dict etc
+      ex. name="kiran"
+      print(name[2])
+      
+      slicing:- slicing is a technique used for accessing a part of sequence(multiple elements).
+      ex. name="kiran"
+          print(name[1:4:1])
+
+Q. 
+
+n=int(input("Enter no. of rows:"))
+
+Q. what is zip function in python?:-
+---> zip() function is used to combine two lists/iterables using index and it will convert into tuple.
+    list1=['name','roll','marks']
+    list2=['rohan',101,90]
+    syntax:-
+    zip(list1,list2)
+
+
+list1=['name','roll','marks']
+list2=['rohan',101,90]
+zip_object=zip(list1,list2)
+print(dict(zip_object))
+
+'''
+for ele in zip_object:
+    print(ele)
+zip_object=list(zip_object)
+print(zip_object)'''
+
+
+Q. How will you import a specific function from another module in your main module?
+----> To import specific function from another module,we will use import keyword.just write
+      "from module_name import function_name"
+
+Q. How will import contents from other module in your current module?:-
+----> There are different ways of importing contents from another module.For this,you will use 'import'
+      keyword.
+      way1:- import module_name
+      way2:- from module_name import *
+      way3:- from . import function_name
+      way4:- import module_name as var
+      way5:- from module_name import attr1,attr2
+
+
+Q. what is the output:- print(2**3**2)
+---> 512 because of associativity of exponentiation opeartors.It is from right to left
+    2**9
+    512
+
+Q. output:- s={10,20,20,10,20,10,20}
+            print(len(s))
+
+---> 2. In set,duplicates are not cosnidered. All duplicates are considered as single element.that's why,
+     length is two.
+
+Q. output:- print(type({}))
+----> <class 'dict'>
+
+Q. How will you create empty set:-
+----> By using set(iterable).
+
+Q. print(10//3):- 3
+   print(-10//3):- -4
+
+Q. what is negative indexing
+Q. name="java by kiran"
+   print(name[4:10:-1])
+
+Q. [10,20,30,40,25,36,47,28,41] 
+write a program for finding min,max,sum,count(len),count_of_particular_element
+-->
+nums=[]
+n=int(input("How many number:?"))
+for i in range(n):
+      num=float(input("Enter number:"))
+      nums.append(num)
+
+print(nums)
+def min1(nums):
+      minimum=nums[0]
+      for i in range(1,len(nums)):
+             if nums[i]<minimum:
+                minimum=nums[i]
+      return minimum
+print("minimum value is:",min1(nums))
+
+def max1(nums):
+      maximum=nums[0]
+      for i in range(1,len(nums)):
+             if nums[i]>maximum:
+                maximum=nums[i]
+      return maximum
+print("maximum value is:",max1(nums))
+
+def sum1(nums):
+    sum1=0
+    for i in nums:
+        sum1=sum1+i
+    return sum1
+print("sum of all numbers:",sum1(nums))
+
+def count1(nums):
+    count=0
+    for i in nums:
+        count+=1
+    return count
+print("number of elements:",count1(nums))
+
+def count_element(nums,number):
+    count=0
+    for i in nums:
+        if i==number:
+            count+=1
+    return count
+
+print("count of 60:",count_element(nums,60.0))
+    
+
+l=[10,20,30,40]
+def largest(a):
+    if len(a)==1:
+        out=a[0]
+        #print(out)
+        return out
+    elif a[0]>=a[1]:
+        a.pop(1)
+        return largest(a)
+    elif a[0]<a[1]:
+        a.pop(0)
+        return largest(a)
+print(largest(l))
+
+
+
+
+
+
+
+
+
+
+Q. what is precedence and associativity?
+
+Q. output:- print(10.0//3)
+---> 3
+   correct answer:- 3.0
+if any operand is float value,then final result is also a floating point number.
+To avoid a data loss
+
+Q. difference between 'break' and 'continue'?:-
+---> break and continue are keywords used to alter the flow of program
+ In python,'break' is a keyword used to terminate the loop for a specific condition.When
+break occurs,control of program flows to statements immediately after body of loop.
+     continue keyword is used to bring the program flow at the beginning of loop.
+   It skips remaining lines of code for the current iteration.
+for i in range(3):
+    for j in range(2):
+        if j==1:
+            break
+        print(i,j)
+    
+
+Q. what is pip?
+---> Python has huge community.It is impossible to distribute/give all packages with python's
+     standard distribution.
+     Instead,python has provides a tool called as 'pip',Using that tool,we can easily install
+     additional packages/modules/frameworks/libraries.
+     simply,pip is python package manager.
+
+Q. what is long form of pip?:-
+----> Performance Improvement Plan
+
+Q. What is 'pass' keyword and what is it's use?
+----> -It is a null statements which represents 'no operation'.
+      - It is a place holder for future code.It is used to avoid error(you cannot leave a block without
+        code).
+
+Q. what is difference between pass and comments?:-
+----> comments are ignored by python interpreter while 'pass' keyword is not ignored by interpreter.
+      comments are used for mentioning functionality of code.pass is used for placeholder for future code.
+
+Q. what is docstring in python?:-
+----> docstrings are strings literals used to provide documentation/information with python modules,
+      functions,classes,packages etc.  
+      def add():
+    """this is a function
+       which adds two numbers"""
+    x=10
+    y=20
+    return x+y
+
+Q. How to see docstring of particular function/modules.packages....
+----> using __doc__ attribute
+      print(add.__doc__)
+def add():
+    """this is a function
+which adds two numbers"""
+    x=10
+    y=20
+    return x+y
+
+print(add.__doc__)
+print(print.__doc__)
+
+Q. pi=3.14159
+   
+pi=3.14159212717
+print(pi)
+
+#3.14
+
+#3.141
+
+print("{:.3f}".format(pi))
+print("{:.2f}".format(pi))
+
+
+    
+Q. How to return value from a particular function?:-
+----> 
+   By using return statement. Python provides a keyword 'return' which is used to return something
+from the function.
+   ex,
+def add(x,y):
+   return x+y
+
+Q. what is need of returning value?:-
+--->
+   if we want to use generated value for future use,then we will return a value.
+
+Q. can we return multiple values from a function?:-
+----> We can return multiple values from a function.
+   def calci(x,y):
+       return x+y,x-y
+   def func():
+       return list,tuple,dict,set,string,function etc...
+
+Q. If we do not specify return statement,what is the return value?:-
+----> None
+
+Q. Can we pass a function as parameter?:-
+----> yes...
+   def display():
+        return "hello"
+   def myfunc(fun):
+        print(fun())
+   myfunc(display)
+     
+Q. Can we return a function from a function?:-
+----> yes..
+    def display():
+         def demo():
+            print("demo function")
+            return "hello"
+         #print(demo())
+         print("display function")
+         return demo
+    demo=display()
+    demo()
+
+
+Q.what is difference between parameters and arguments?:-
+---->parameters:- variables written in function definition which will hold actual values passed in
+             function call are called parameters.
+     arguments:- Actual values passed in function call.
+def add(x,y):
+     return x+y
+add(2,3)
+
+parameters:- x,y
+arguments:-2,3
+
+Q. What is difference between actual arguments and formal arguments?
+
+Q. what are types of arguments?:-
+----> There are four types of arguments?:-
+   1) positional arguments
+   2) keyword arguments
+   3) default arguments
+   4) variable length arguments
+
+Q. What are positional arguments?:-
+-----> positional arguments are arguments passed in function call in correct positional order.
+      - the order/position of arguments must be maintained
+      - no. of parameters==no. of arguments
+   ex. 
+     def power(x,y):
+          z=x**y
+          return z
+     power(2,3)   #8
+     power(3,2)   #9
+     power(3)     #error
+     power(3,2,4) #error
+
+Q. What are keyword arguments?:-
+-----> Keyword arguments are arguments passed to the function with name-value pairs.
+   - keyword name and parameter name must match
+   - no. of parameters=no. of arguments
+   - there is no need to maintain order of arguments.
+  ex.
+     def add(a,b):
+          return a**b
+     add(a=3,b=2)  #9
+     add(b=2,a==3) #9
+     add(a=2,b=3,b=2) #error
+
+Q. difference between sort and sorted functions?:-
+ ---> sort and sorted methods used for sorting items of sequence.
+     1) sorted() returns a modified sorted list whereas sort() does not return any list
+     2) return type of sorted() is list while return type of sort() is None.
+     3) sorted does not modify original list and sort modifies original list
+     4) sorted() is used on any sequence while sort is used on only list.
+     5) sorted() is a python inbuilt function while sort is a method of list.
+
+ sorted(iterable,key,reverse=False)
+ Python 3.8.7 (tags/v3.8.7:6503f05, Dec 21 2020, 17:59:51) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> l=[10,20,30,13,15,9,8]
+>>> sorted(l)
+[8, 9, 10, 13, 15, 20, 30]
+>>> l1=sorted(l)
+>>> l1
+[8, 9, 10, 13, 15, 20, 30]
+>>> id(l)
+2145920411072
+>>> id(l1)
+2145926364800
+>>> l1=sort(l)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    l1=sort(l)
+NameError: name 'sort' is not defined
+>>> l1.sort()
+>>> l1
+[8, 9, 10, 13, 15, 20, 30]
+>>> l
+[10, 20, 30, 13, 15, 9, 8]
+>>> sorted(l)
+[8, 9, 10, 13, 15, 20, 30]
+>>> sorted(l,reverse=False)
+[8, 9, 10, 13, 15, 20, 30]
+>>> sorted(l,reverse=True)
+[30, 20, 15, 13, 10, 9, 8]
+>>> 
+
+Q.What are default arguments?:-
+----> Default arguments are arguments having default value in a function definition.If we do not 
+      pass arguments for any parameter,then it's default value is used.
+def database(name,age=22):
+    print(f"age is {age} and name is {name}")
+database('sunil',70)
+
+def database(name,age=22):
+    print(f"age is {age} and name is {name}")
+database('sunil')
+
+Q. what are variable length arguments?:-
+----> variable length arguments are arguments that can accept any number of values.
+     - The variable length arguments are written using *symbol.
+     two types:-
+     1) *arg (variable length arguments)
+     2) **args(variable length keyword arguments)
+     - in case of variable length arguments,values are stored in tuple.
+
+def sum_all(*arg):
+    sum1=0
+    for i in arg:
+        sum1=sum1+i
+    print(sum1)
+sum_all(10,20,30,40,50,20,30,40,50)
+    
+     - in case of variable length keyword arguments,values are stored in dictionary
+    
+def sum_all(**arg):
+    sum1=0
+    for i in arg.values():
+        sum1=sum1+i
+    print(sum1)
+sum_all(a=10,b=20,c=30)
+
+note:- variable length arguments must be last argument.
+
+Q. what are local variable?
+----> The variable which are declared inside the function is called as local variable.
+     - local variable scope is limited to the function in which it is defined.
+     - local variables are not accessible outside the function.
+     - priority of local variables is higher than global variables.
+def add(b):
+    a=10  #local variable
+    print(a)
+add(20)
+#print(b)
+print(a)
+
+Q. what are global variables?:-
+----> The variables which are not declared in any function/class are called as global variables.
+     - scope of global variables are throughout the program.
+     - all functions can access global variable.
+x=100 #global
+def add(b):
+    print(x)
+    a=10  #local variable
+    print(a)
+add(20)
+#print(b)
+print(a)
+
+x=100 #global
+def add(b):
+    x=200
+    print(x)#200
+    a=10  #local variable
+    print(a)
+add(20)
+print(x)#100
+
+
+Q. can we change value of global variable inside function?:-
+---> yes.. we can change value of global variable using 'global' keyword.
+ex.
+x=100 #global
+def add(b):
+    global x
+    x=500
+add(20)
+print(x)#500
+
+
+Q. what is anonymous function/lambda function?:-
+----> - A function without a name is called as 'anonymous' function.
+      -also called as lambda function.
+      - are not created using 'def' keyword.'lambda' keyword is used to create lambda function.
+      - no need to write return statement.
+      - only expressions can be used.
+ex.
+def add(x,y):
+    return x+y
+add(2,3)
+lambda x,y:x+y
+
+Q. How will you call a lambda function?:-
+---> By using a variable name for lambda function.
+    ex. inc=lambda x:x+1
+        print(inc(10))
+
+Q. Can you write multiple expressions in lambda function?:-
+---> Yes..we have to pack multiple expression in one tuple.
+ex. 
+example=lambda x,y:(x+y,x-y)
+add,sub=example(10,20)
+print(add)
+print(sub)
+
+Q. How will you nest lambda functions?:-
+----> add=lambda x=10:lambda y:x+y
+
+Q.convert following function into a lambda function?:-
+def add():
+    x=10
+    def add1(y):
+         return x+y
+    return add1
+a=add()
+print(a(30))
+
+add=lambda x=10:lambda y:x+y
+a=add()
+print(a(30))
+
+Q. differentiate between append() and extend() of list/:-
+---> append() adds an element to list. 
+     extend() adds a new list.
+l=[10,20,30]
+l1=[40,50,60,70]
+l.append(100)
+l.extend(l1)
+print(l)
+
+Q. what are advantages of lambda functions and where to use?
+--->  1) you can instantly create lambda functions and can pass as arguments inside another functions.
+         (higher order functions).
+      2) lambda functions are extensively used in higher order functions.
+      3) less code
+      4) nameless functions
+      5) Easy to implement.
+   disadvantages:-
+      1) used only for expressions and not for loops and statments
+      2) provides less redability.
+
+Q. what are higher order functions?:-
+---> the function which takes another function as argument,it is called as higher order function.
+     def result(marks):
+          pass
+
+Q. what are inbuilt 'higher order functions'?:-
+---> filter,map,reduce
+
+Q. can you create your own higher order functions?;-
+---> yess.
+
+Q. what is filter() function?:-
+---> filter function is an inbuilt higher order function which takes a sequence and filters items
+     from it according to certain logic.
+
+     function---> logic
+     syntax:-
+           filtered=filter(function,sequence)
+
+ex1:-
+marks=[78,98,87,91,67,59,71,91]
+def first_class(m):
+    if m>=80:
+        return True
+    else:
+        return False
+         
+filtered=filter(first_class,marks)
+print(filtered)
+print(type(filtered))
+for item in filtered:
+    print(item)
+
+ex2:-
+marks=[78,98,87,91,67,59,71,91]
+def first_class(m):
+    if m>=80:
+        return True
+    else:
+        return False
+         
+filtered=list(filter(first_class,marks))
+print(filtered)
+print(type(filtered))
+for item in filtered:
+    print(item)
+
+ex3:-
+marks=[78,98,87,91,67,59,71,91]
+'''def first_class(m):
+    if m>=80:
+        return True
+    else:
+        return False'''
+         
+filtered=list(filter(lambda m:(m>=80),marks))
+print(filtered)
+print(type(filtered))
+for item in filtered:
+    print(item)
+
+Q. write a python program to filter vowels from entered string using filter() function?
+--->
+
+name=input("enter name:")
+def Vowels(char):
+    vowels=['a','e','i','o','u']
+    char=char.lower()
+    if char in vowels:
+        return True
+    else:
+        return False
+
+vowels=list(filter(Vowels,name))
+print(vowels)
+vow=['a','e','i','o','u']
+vowels=list(filter(lambda char:(char in vow),name))
+print(vowels)
+
+
+l=[1,0,'a',True,False,'0']
+var=list(filter(None,l))
+print(var)
+
+non-zero:- True
+None,zero- False
+
+1
+'a'
+True
+'0'
+
+h/w:-
+Q. write a python program to filter even numbers from a list of integers using filter() function?
+
+
+Q. map() function:-
+map function executes a specified function(logic) to each element of sequence and can change the element.
+syntax:-
+mapper=map(function,sequence)
+
+ex.
+marks=[78,98,87,91,67,59,71,91]
+def inc(m):
+    return m+2
+mapper=map(inc,marks)
+print(mapper)
+print(type(mapper))
+for ele in mapper:
+    print(ele)
+#map(lambda m:m+2,marks)
+
+
+Q. add two lists using map() function
+num1=[10,20,30]
+num2=[1,2,3]
+add=map(lambda x,y:x+y,num1,num2)
+print(list(add))
+
+Q. l=['sad','mad','dog','cat']
+o/p:- [['s','a','d'],['m','a','d'],.......]
+
+l=['sad','mad','dog','cat']
+var=list(map(list,l))
+print(var)
+
+
+
+Q.reduce():-
+--> reduce() is an inbuilt higher order function which reduces a sequence into a single value
+    by processing the sequence.
+    first,we have to import 'functools' module.
+  
+
+ex.
+from functools import reduce
+l=[70,80,90,10]
+val=reduce(lambda x,y:x+y,l) 
+print(val)
+
+
+    
+Q.Guess the output?:-
+list1=[]
+if list1:
+   print(list1,'True')
+else:
+   print(list1,'False')
+
+o/p:-[],False
+False:- 0,False,None,Nothing
+True:- True,non-zero,something
+
+
+
+Q. 
+t=(10,20)
+var=0
+list1=[]
+if t or var and list1:
+	print("True")
+else:
+        print("False")
+
+o/p:- False
+
+t=(10,20)
+var=0
+list1=[]
+if t or var and list1:
+	print("True")
+else:
+        print("False")
+o/p:- True
+
+Q.what is eval() function?:-
+---> The eval() function evaluates the specified expression,if the expression is a valid
+     python expression.
+     ex.
+x=10
+val=eval('"hello"+"bye"')
+val=eval('10+20*3')
+val=eval('x+2')
+val=eval('print("50")')
+print(val)
+print(type(val))
+
+n=eval(input("enter number:"))
+print(type(n))
+
+Q.Guess the output:-
+
+for i in range(1,20):
+    if i==3:
+        break
+    else:
+        print(i)
+else:
+    print("bye")
+
+o/p:-
+1
+2
+
+Q. 
+Assume string is alphanumeric.Write a python program to sort characters and numbers so that
+first alphabets and then numbers are printed.
+input:- A1H67Z
+output:-AHZ167
+
+input:- S1B2G7
+output:- BGS127
+
+a='fgety5effgqwy48e9gr4'
+num=[]
+alpha=[]
+for char in a:
+    try:
+        num.append(str(int(char)))
+    except:
+        alpha.append(char)
+list1=sorted(alpha)+sorted(num)
+string=''print(string.join(list1))
+
+
+
+ex.
+s='S1B2G7'
+alphabets=[]
+numbers=[]
+for ch in s:
+    if ch.isalpha():
+       alphabets.append(ch)
+    else:
+       numbers.append(ch)
+final_list=sorted(alphabets)+sorted(numbers)
+output=''.join(final_list)
+
+Q.what is a raw string?:-
+---> Raw string is a string which treats escape seqeunces as normal text.
+     How to create a raw string?:-
+     just preced string with r/R.
+     ex. print(r"hello\nshantanu")
+         print(R"hello\nshantanu")
+
+
+Q. write a python program for following requirement..
+  input: a4g3c2
+  output:- aaaagggcc
+  
+  input:- s2z3q1
+  output:- sszzzq
+
+---> 
+x='a4g3c2'
+num=[]
+alpha=[]
+for char in x:
+    try:
+        num.append(int(char))
+    except:
+        alpha.append(char)
+i=0
+while i<len(num):
+    for char in alpha:
+        print(char*num[i],end='')
+        i+=1
+
+x='a4g3c2'
+output=''
+for ch in x:
+    if ch.isalpha():
+         var=ch
+    else:
+         n=int(ch)
+         output=output+(var*n)
+print(output)
+
+Q.
+list1=['xyz','123']
+for i in list1:
+    list1.append(i)
+print(list1)
+
+#['xyz','123','xyz','123','xyz','123'.........]
+
+Q. write a python program for following requirement?
+  string:- aaaabbbccd
+  output:- 4a3b2c1d
+logic:-
+
+s='aaaabbbccz'  #4a3b2c1z
+output=''
+char=s[0]
+count=1
+i=1
+while i<len(s):
+    if s[i]==char:
+        count+=1
+    else:
+        output=output+str(count)+char
+        char=s[i]
+        count=1
+    if i==len(s)-1:
+        output=output+str(count)+char
+    i+=1
+print(output)
+    
+
+Q.
+l=[[2,1] for j in range(2)]
+print(l)
+var=0
+for i in range(2):
+    var+=l[i][i]  #var=var+l[0][0]
+    print(var)
+
+Q. write a python program for following requirement
+length is same
+s1='raju'
+s2='yash'
+output=''
+i=0
+while i<len(s1):
+     output=output+s1[i]+s2[i]
+     i+=1
+print(output)
+o/p:- ryaajsuh
+
+with different length
+s1=input("Enter string:")  #'jay'
+s2=input("Enter string:")  #'viru'
+output=''
+i,j=0,0
+while i<len(s1) or j<len(s2):
+    if i<len(s1):
+        output=output+s1[i]
+        i+=1
+    if j<len(s2):
+        output=output+s2[j]
+        j+=1
+print(output)
+
+
+
+Q.Guess the output:-
+s1="aAbBcCdDeE"
+var="c"
+while var in s1:
+    s1=s1[:-1]
+    print(var,end='')
+
+o/p:- 
+infinite 'c'
+cccccc
+
+
+Q.
+ expected output:- hello\\"world"\n'bye'\
+ without using raw string...
+---->
+#hello\\"world"\n'bye'\
+#\\:- 4
+print("hello\\\\\"world\"\\n'bye'\\")
+#\"->"
+#\'->'
+
+
+Q. what is the output:-
+num=2e3
+print(type(num))
+print(num)
+o/p:-
+<class 'float'>
+2000.0
+exponential representation
+2e3:- mantissa e/E exponent
+2*10^3---> 2*1000--> 2000.0
+
+
+Q.what is ord() function?:-
+---> python2:- ascii python3: unicode
+     --> The python's ord() function returns an integer representing unicode code for a given
+         character.
+       syntax:- ord(character)
+       ex. ord('A'):-  65
+       - ord('A')-ord('Z'):- 65-90   
+       - ord('a')-ord('z'):-97-122
+
+Q. what is chr() function?:-
+---> The chr() function returns a character from an integer(representing unicode code for a character)
+     syntax:- chr(i)
+     out of range:- OverFlowError
+
+Q. what are non-local variables?
+--->non local variables are variables used in nested functions whose local scope is not defined.
+    non-local variables are not local as well as global variables
+ def myfun():
+    s="hello" #local variable
+    def inner():
+        nonlocal s
+        s="bye"   #non-local variable
+    inner()
+    return s
+print(myfun()) #hello
+
+
+Q. what is implicit type conversion?:-
+---> python automatically converts one datatype into another datatype,this is called as 
+     implicit type conversion.
+     ex.
+     123+1.23=124.23
+     int+float=float
+     - to avoid data loss.
+     - python automatically promotes datatypes.
+       int ---> float --->str
+
+Q. what is explicit type conversion?:-
+---> Python everytime cannot implicitely convert datataypes.
+    - Instead, for explicit conversion,python provides inbuilt functions
+    - int(),float(),complex(),bin(),oct(),hex(),str(),list(),tuple(),dict(),set(),frozenset() etc
+
+Q. what is closure?:-
+--->
+
+Q. write a python program to print characters present at even index and odd index separately for given string..
+hello
+chars at odd index
+h
+l
+o
+chars at even index
+h
+r
+
+way1:-
+s="akash"
+i=0
+print("at even index:")
+while i<len(s):
+     print(s[i])
+     i+=2
+i=1
+print("at odd index:")
+while i<len(s):
+     print(s[i])
+     i+=2
+
+
+way2:-
+print("characters at even index:",s[0::2])
+print("characters at odd index:",s[1::2])
+
+Q. what is difference between discard() and remove() of set datatype?:-
+---> discard will not give any error if element not present while remove() will give error..
+s={10,20,30,40}
+s.discard(100) #no error
+print(s)
+
+s.remove(100) #error
+
+Q. what is difference between split() and join()?
+Q. del and remove()
+Q. isdigit() and isnumeric()
+Q. append() and insert()
+Q. values() and keys()
+Q. add() and update() of set
+
+
+H/W:- one question...
+
+Q. what are disadvantages of python?
+----> 1) slow speed:- Python is interpreted language.Python executes code line by line.It also generates
+         intermediate code for portaility.
+      2) Mobile development and android development:- rarely used.
+      3) Database connectivity:- JDBC,ODBC...It is in development process.
+      4) design restrictions
+      5) memory consumptions in case of lists,dictionary etc.
+      6) runtime errors:- 
+    c--->python
+    python--->c
+
+Q.what is frozenset?:-
+---> frozenset is just an immutable version of set in python.
+     - elements of sets can be modified whereas elements of frozensets cant be modified.
+     - frozenset is immutable datatype.
+     how to create frozenset?:-
+     syntax:- frozenset(iterable)
+     iterable:- sequence(list,tuple,set,string,dict etc)
+     - if no parameters passed,it will return an empty frozenset
+Python 3.8.7 (tags/v3.8.7:6503f05, Dec 21 2020, 17:59:51) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> s={10,20,30,10,10,20}
+>>> s
+{10, 20, 30}
+>>> s.add(50)
+>>> s
+{10, 20, 50, 30}
+>>> frozenset(s)
+frozenset({10, 20, 50, 30})
+>>> f=frozenset(s)
+>>> f.add(100)
+Traceback (most recent call last):
+  File "<pyshell#6>", line 1, in <module>
+    f.add(100)
+AttributeError: 'frozenset' object has no attribute 'add'
+>>> l=[10,20,30,30,40]
+>>> l
+[10, 20, 30, 30, 40]
+>>> frozenset(l)
+frozenset({40, 10, 20, 30})
+>>> 
+>>> 
+>>> d={'one':1,'two':2,'three':3}
+>>> f=frozenset(d)
+>>> f
+frozenset({'three', 'two', 'one'})
+>>> 
+
+Q.what are the differences between list and numpy's array?:-
+---> array:- homgeneous data collection of data of same types
+     list:- heterogeneous data collection of data having different types
+     numbers=[101,102,103,104,'hello']
+     
+     1) using array module:- array(10,20,30,40):- cant create multi-dimensional array
+     2) numpy :- array  string....dtype="str" :- we can create multidimensional arrays
+
+102,104,106,108,110
+
+Q. what are closures?:-
+---> The technique by which some data gets attached to the code is called as 'closures'.
+def outer(msg):
+    def inner():
+        print(msg)
+    return inner
+inner=outer('hello')
+del outer
+inner()  #hello
+
+
+
+Q. o/p:-
+l=['i','am','going',['to','pune'],'for','taking','classes']
+print(l[3:4])
+print(l[3:4][0])
+print(l[3:4][0][1][2])
+
+o/p:-[['to','pune']]
+     ['to','pune']
+     n
+
+
+Q. for i in 765<1:
+       print(i)
+---> Type-error
+
+Q. what is difference between get() and dict[key]?:-
+---> d={'one':1,'two':2,'three':3}
+print(d.get('t','not found'))
+print(d['twoop'])
+
+get() method returns a value(optional) if key not present.
+dict[key] returns key-error if element not found.
+
+Q. desired o/p:- /\/\/\/\/\
+===>print("/\\/\\/\\/\\/\\")
+
+Q. how to print 'rahul' 100 times without using loop?:-
+-->use recursion...
+
+h/w:-
+
+Q.  difference between Deep copy and shallow copy?
+copying using assignment operator
+>>> old_list=[[1,2,3],[4,5,6],[7,8,9]]
+>>> new_list=old_list
+>>> id(new_list)
+2471108077248
+>>> id(old_list)
+2471108077248
+
+copying a list:-
+shallow copy
+deep copy
+
+copy module:-
+copy(list)  ---->  shallow copy
+deepcopy(list)  ----> deep  copy
+
+
+import copy
+list1=[[1,2,3],[4,5,6],[7,8,9]]
+print(list1)
+list2=copy.copy(list1)
+print(list2)
+
+
+print(id(list1))
+print(id(list2))
+
+list1[0][0]=100
+
+print(list2[0][0])
+
+#A shallow copy creates a new list object which stores references of original
+#elements
+#A shallow copy does not copy elements.It only copies the list.
+list1.append(10000) #No
+print(list2)
+print(list1)
+list1.insert(0,[])
+
+
+list1=copy.deepcopy(list)
+
+import copy
+list1=[[10,20,30],[40,50,60],'hello']
+list2=copy.deepcopy(list1)
+#print(id(list1))
+#print(id(list2))
+
+print(id(list1[0]))
+print(id(list2[0]))
+
+print(id(list1[0][0]))
+print(id(list2[0][0]))
+
+#A deep copy creates a new object and recursively adds the copies
+#of nested elements present in original elements.
+
+#a shallow copy creates anew object and and give reference to original contents.
+
+list=[old_records]
+list1=[old_records+new_records]
+
+
+
+
+Q. complete flow of python program
+Q. what is exact work of PVM?
+Q. In which situation you will refer list and in which situation you will refer tuple?
+Q. Where we implement set in real project?
+Q. can you reverse set?  #No
+Q. difference between set method and curly brackets.
+Q. tell me three predefined methods of dictionary?
+Q. dictionary key can be null or not?
+
+d={None:'hello'}
+print(d)
+#keys are immutable
+Q. Key can be repeated in dictionary?
+
+Q. datatype which can contain list,tuple,set,elements,dict?
+-->list
+
+Q.what is namespace and scope of variables?
+-> namespace is system which will control all the names of your program.
+   namepscae is a collection of currently defined names in your python programs.
+types of namespaces:-
+1) built-in namespaces
+2) global namespace
+3) local namespace
+4) enclosing namespace
+
+python program:- different namespace.
+
+built-in namespace:-
+   - it is a namespace containing all built-in names. len(),print(),input()...
+   - when you open python interpreter,this namespace automatically gets created.
+to see built-in namespace:- print(dir(__builtins__))
+
+global namespace:-
+   - this namespace contains names of current module.
+   - when you run a python program.
+
+local namespace:-
+   - namespace made for a function,class,object.
+   - when a call a function/when we create object.
+
+enclosing namespace:
+b=200
+def outer():
+    a=100
+    def inner():
+        c=150
+        
+        def demo():
+            y=1000
+        print(dir())
+    inner()
+outer()
+
+
+
+'''global:- b,outer
+local:- y
+enclosing(outer):- a,inner
+enclosing(inner): c,demo'''
+
+Q. enclosing function and enclosed function?
+
+
+Q. How to generate random numbers?
+   OR
+   create a list which will contain 10 random number between 1-100
+--> - we have to use 'random' module.
+    - random():- it will give random floating number between 0-1
+    import random
+    print(random.random())
+    
+import random
+l=[]
+for i in range(10):
+    l.append(random.random()*100)
+print(l)
+
+randint() function:-
+-->
+import random
+l=[]
+for i in range(10):
+    l.append(random.randint(1,100))
+print(l)
+
+
+Q. write a python program to find all substrings of string
+bye
+
+bye,by,ye,e,y,b
+
+str1='hello'
+l=[]
+for i in range(len(str1)):
+    for j in range(i+1,len(str1)+1):
+        l.append(str1[i:j])
+print(l)
+
+Q. Explain enumerate() method?:-
+-->It iterate through a sequence and retrieve the index position and value.
+s="shantanu"
+d={'one':1,'two':2}
+ind=list(enumerate(d))
+print(ind)
+
+
+Q. 
+def function(n,list1=[]):
+    list1.append(list1.append(n))
+    return list1
+for i in range(4):
+    list2=function(i)
+print(list2)
+
+o/p:- [0, None, 1, None, 2, None, 3, None]
+
+Q. what are differences between procedural oriented and object-oriented approach?
+--> 1) procedural:- divided into functions.
+       OOP:- divided in objects.
+    2) procedural:- more importance to functions/instructions.
+       OOP:- data/objects is important here.
+    3) procedural:- no security features.
+       OOP:- security features
+    4) procedural:- top-down
+       OOP:- bottom up
+    5) procedural:- unreal applications
+       OOP:- real-world
+    6) procedural:- no overloading
+       oop:- you can overload instructions.
+
+Q. How to round numbers in python?
+---> using round() function.
+     syntax:- round(number,number_of_digits)
+print(round(25.7))
+print(round(24.4567,2))  #24.457
+
+
+Q. what is difference between title() and capitalize()?
+---> title():- capitalize first letter of each word in string.
+     capitalize():- capitalize only the first word of string
+     syntax:- string.method_name()
+str1="india is great"
+str2=str1.title()
+print(str2)
+
+str1="india is great"
+str2=str1.capitalize()
+print(str2)
+
+
+Q.what is IIFE function?
+---> Immediately Invoked Function Expressions.
+    These functions are the functions which gets called immediately after the function definition.
+print((lambda x:x+1)(3))
+add=lambda x:x+1
+print(add(3))
+print((lambda x:x+1)(3))
+
+
+Q. what are globals() function?:-
+---> This function returns a dictionary which contains global variables.
+num=50
+def show():
+    num=globals()['num']
+    num=num+10
+show() #20
+print(num) #50 
+
+Q. what is recursion?
+--> a function calling itself again and again to compute value is called as recursive function and
+    process is called as recursion.
+def add():
+    add()
+
+def demo():
+    print("hello")
+    demo()
+demo()
+
+def demo():
+    print("hello")
+    demo()
+demo()
+
+Q. recursion limit:- 1000times
+how to check recursion limit and can we change it?
+import sys
+print(sys.getrecursionlimit())
+sys.setrecursionlimit(50)
+print(sys.getrecursionlimit())
+def demo():
+    print("hello")
+    demo()
+demo()
+
+
+Q. print "hello world" 100 times without using any loop.
+-> 
+count=100
+def printer(count):
+    count=count-1
+    if count<0:
+        return 1
+    print("hello world")
+    printer(count)
+printer(count)
+
+Q.what are tools that help to find bugs or perform analysis while typing the code in python?
+---> pychecker is a tool which detects bugs while typing the source code and warns about the style and
+     error.
+    -pylint
+    -linter
+
+Q. how to generate random string using python?
+---> there is a function in random module called as "choices()".
+     import string
+     string.ascii_letters:- returns uppercase and lowercase letters.
+     string.assii_uppercase:- returns uppercase letters.
+     string.ascii_lowercase:- returns lowercase letters.
+     string.digits:- returns digits
+     string.punctuation:- punctuation marks
+
+import random
+import string
+n=10 #number of characters present in random string
+for i in range(10):
+    ran=random.choices(string.ascii_uppercase+string.ascii_lowercase+string.digits+string.punctuation,k=n)
+    str1=''.join(ran)
+    print("random string:",str1)
+
+Q. what is __name__ in python?/ why we write if __name__=='__main__'
+---> Before executing any python program,python defines some special variables like __name__.
+     If the source file is executed as main program ,the interpreter sets value of __name__ as __main__.
+example.py:-
+def demo():
+    print("hello world")
+def add(a,b):
+    return a+b
+print(__name__)  #__main__
+if __name__=='__main__':
+    print(add(2,3))
+    demo()
+
+example1.py:-
+import example
+print(__name__) #main
+
+
+Q. what is OOP?
+---> - OOP stands for 'object oriented programming'.
+     - OOP is a way/style/approach of writing programs used to solve real-life problems by using
+       class and objects concept.
+     - It is a programming model organized around the objects than "actions".
+
+Q. what are pillars of OOP?
+---> -inheritance
+     - polymorphism
+     - encapsulation
+     - abstraction
+
+Q. tell me about yourself?
+---> name,achievments,education details(g,pg,12th,10th),skills,certifications
+
+Q. define:- class and object?
+---> 1) class is a collection of data members(variables) and methods operating on the data members.
+class Student:
+     data
+     methods 
+    2) class is a blueprint for creating objects.
+    3) class is a collection of objects.
+    4) class is a user-defined datatype.
+class student:
+    pass
+s1=student()
+print(type(s1))
+
+object:- object is an instance of class.object is real-time entity that has attributes and behaviour.
+
+OOP:- focus on data rather than logic.
+
+Q. what are python's magic methods/dunder methods?
+---> python's magic method adds magic to the class.These methods are written with two double underscores
+     at beginning and at end.
+     ex. __init__
+     - There is no need to call magic methods.These gets automatically called when certain event occurs.
+
+Q. name some magic methods and specify uses.
+---> 1)__init__():-
+     - used to initialize data of an object.
+     - it is called when instance is created.
+     2) __str__():-
+     - these method is used for printing the object.
+     - you can over-ride this method.
+     class student:
+def __str__(self):
+     return "hello world"
+s1=student()
+print(s1)
+s2=student()
+print(s2)
+     3) __new__():- 
+     - it allocates memory for an object.
+     - it is called before __init__().
+
+Q. what is decorator?
+---> a decorator function is a function that takes other functions as parameter,modifies it and add
+     new features in it and returns it.
+     - we use @ symbol to create decorators.
+#without using decorator
+def decor(num):
+    def modify():
+        a=num()
+        a+=10
+        return a
+    return modify
+def num():
+    return 50
+num=decor(num)
+print(num())
+
+#with using decorator
+def decor(num):
+    def modify():
+        a=num()
+        a+=10
+        return a
+    return modify
+@decor
+def num():
+    return 50
+print(num())
+
+Q. how to create object?
+---> syntax:- object_name=class_name(constructor_values)
+
+Q. how to delete an object?
+---> del object_name
+
+class demo():
+    pass
+d=demo()
+del d
+print(d)
+
+
+
+Q. what is constructor?what is __init__ method?
+---> constructor/__init__ method is a special method which gets called on creation of every object.
+    -without constructor,object creation is not possible.
+    -constructor initializes values of attributes of an objects.
+    -you have to pass 'self' argument as a first argument.
+    - it gets automatically called when object is created.
+class person(object):
+    def __init__(self):
+        self.age=21
+        self.name="rohit"
+p=person()
+parameterized constructor
+class person(object):
+    def __init__(self,age):
+        self.age=age
+        self.name="rohit"
+p=person(21)
+
+
+Q.what is self and can i use your name instead of self?
+---> self is a variable which contains memory reference of a current object.
+    -to access object attributes and class can work on particular object by help of self variable.
+    -normally we use self in constructor and instance methods.
+    - yes,we can use any other variable name instead of 'self'...
+class person(object):
+    def __init__(shantanu,age):
+        shantanu.age=age
+        shantanu.name="rohit"
+p=person(21)
+
+Q. how to create object:-
+syntax :- object_name=classname(args for constructor)
+
+Q. what are the types of variables?
+---> instance variables,class variables,static variables...
+   -a separate copy of instance variable is created for each class.
+   -class variables:- only one copy is created for whole class/for all objects.
+
+Q. How class variables are created?
+  1) at the top of class(not inside any instance method or constrcutor)
+  2) by using classmethod
+
+class person(object):
+    brain_status=True #class variable
+    def __init__(shantanu,age):
+        shantanu.age=age
+        shantanu.name="rohit"
+    @classmethod
+    def create(cls):
+        cls.brain_status1=False   #class variable
+p=person(21)
+p1=person(23)
+
+person.statuc='yes'  #class variable
+
+Q. what is difference between class variable and static variable?
+Q. what is difference between class variable and instance variable?
+   
+class person(object):
+    brain_status=True #class variable
+    def __init__(shantanu,age):
+        shantanu.age=age
+        shantanu.name="rohit"
+    @classmethod
+    def create(cls):
+        cls.brain_status1=False   #class variable
+p=person(21)
+p1=person(23)
+
+person.brain_status
+
+p1.age
+
+p1.brain_status=False
+
+
+
+
+    
+
+Q.how to know the contents of an object?
+--> print(p1.__dict__)
+print(person.__dict__)
+
+Q. How can you randomize items of a list?
+---> 
+from random import shuffle
+l1=[10,20,30,40,50]
+shuffle(l1)
+print(l1)
+
+
+Q. l=[10,20,20,30,30,30]
+---> h/w
+list(set(l))
+
+Q. bubble sort and insertion sort...
+Q. inheritance and types of inheritance
+Q. write a python program for accessing variables of one class in another class...
+--->
+class A:
+    var1=10
+class B(A):
+    def __init__(self):
+        print(A.var1)
+obj=B()
+
+
+class A:
+    def __init__(self,nm,r):
+        self.name=nm
+        self.roll=r
+class B:
+    def __init__(self,obj):
+        self.obj=obj
+    def display(self):
+        print(self.obj.name)      
+obj=A('rahul',101)
+obj1=B(obj)
+obj1.display()
+
+Q. what is polymorphism?
+---> The word polymorphism is made up of two words 'poly' and 'morphs'.poly means 'many' and
+'morphs' means forms.so,polymorphism is an object oriented concept in which an object takes multiple
+forms or behaviours.
+ex. operator overloading. '+' operator has two forms.If you use integers with '+' operator,then it will
+add them.But,if you use '+' operator with strings,then it will concatenate.
+10+20-->30
+'hello'+world--.hello world
+
+Q. what is inheritance and its types?
+---> when we create a new class by inheriting properties of old class is called as inheritance.
+    - we can access old class members using new class object but vice-versa is not possible.
+    - code reusability is main purpose of inheritance.
+Student class:- getname,setname,getmarks,getid
+Teacher class:- getsalary
+
+types:-
+1.single inheritance
+2.multiple inheritance
+3.hierarchical inheritance
+4.multilevel inheritance
+5.hybrid inheritance
+6.cyclic inheritance
+
+
+Q. what is constructor over-riding?
+---> when we have parent and child class having constructors in them.The priority of child class
+ constructor is higher than parent class constructor and parent class constructor is no more available.
+ It is called as constructor over-riding.
+class parent:
+    def __init__(self,nm,r):
+        print("parent class constructor")
+        self.name=nm
+        self.roll=r
+class child(parent):
+    def __init__(self,nm,r):
+        print("child class constructor")
+        super().__init__(nm,r)
+c=child('rohan',101)
+
+Q. give any example of operator overloading?
+---> add two objects
+class Book:
+    def __init__(self,pages):
+        self.pages=pages
+    def __add__(self,other):
+        return self.pages+other.pages
+b1=Book(100)
+b2=Book(200)
+print(b1+b2)  #300
+
+Q.example of operator overloading
+class Book:
+    def __init__(self,pages):
+        self.pages=pages
+    def __str__(self):
+        return "number of total pages:"+str(self.pages)
+    def __add__(self,other):
+        total=self.pages+other.pages
+        b=Book(total)
+        return b
+b1=Book(100)
+b2=Book(200)
+b3=Book(100)
+b4=Book(400)
+print(b1+b2+b3+b4)
+
+
+Q. types of variables and types of methods?
+classmethod:- @classmethod
+staticmethod:- @staticmethod
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+        
+        
+    
+    
+    
+
+
+
+
